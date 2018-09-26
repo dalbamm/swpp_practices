@@ -13,7 +13,8 @@
 	<li *ngFor="let hero of heroes"
 		[class.selected]="hero === selectedHero"
 		(click)="onSelect(hero)">
-		
+		<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+		<!--^- Is this right position? -->
 		
 		<span class="badge">{{ hero.id }}</span> {{hero.initial?  (hero.name|slice:0:2) : hero.name }}
 	</li>
