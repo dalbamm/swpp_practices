@@ -10,12 +10,10 @@
 	</label>
 </div>-->
 <ul class="heroes">
-	<li *ngFor="let hero of heroes"
-		[class.selected]="hero === selectedHero"
-		(click)="onSelect(hero)">
-		
-		
+	<li *ngFor="let hero of heroes">
+		<a routerLink="/detail/{{hero.id}}">	
 		<span class="badge">{{ hero.id }}</span> {{hero.initial?  (hero.name|slice:0:2) : hero.name }}
+		</a>
 	</li>
 </ul>
 <div *ngIf="selectedHero">
